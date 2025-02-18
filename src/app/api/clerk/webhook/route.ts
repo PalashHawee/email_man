@@ -8,14 +8,15 @@ export const POST = async (req: Request) => {
     const firstName = data.first_name
     const lastName = data.last_name
     const imageUrl = data.image_url
-    const id = data.id
+    const userId = data.id
     await db.user.create({
         data: {
-            id,
+            id: userId,
             emailAddress,
             firstName,
             lastName,
-            imageUrl
+            imageUrl,
+            
         }
     })
     console.log('user created')
